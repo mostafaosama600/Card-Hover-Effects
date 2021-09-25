@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #010615;
+  font-family: "Cairo wght";
+}
+.box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  margin: 40px;
+  transition: 0.4s;
+  background: #060c21;
+}
+.box:hover {
+  height: 300px;
+}
+.box .imgbx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.box .imgbx img {
+  max-width: 100%;
+  opacity: 0.1;
+  transition: 0.4s;
+}
+.box:hover .imgbx img {
+  opacity: 1;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  bottom: -2px;
+  right: -2px;
+  background: #fff;
+  z-index: -1;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  bottom: -2px;
+  right: -2px;
+  background: #fff;
+  z-index: -2;
+  filter: blur(40px);
+}
+.box::before,
+.box::after {
+  background: linear-gradient(235deg, #5ca306, #010615, #00bcdf);
+}
+.box .content {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  height: 90px;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.5s;
+}
+.box:hover .content {
+  opacity: 1;
+}
+.box .content h2 {
+  font-style: 20px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+.box .content h2 span {
+  font-style: 14px;
+  color: #fff;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
